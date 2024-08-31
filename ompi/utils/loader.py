@@ -2,7 +2,7 @@ from pathlib import Path
 import markdown
 import toml
 
-ROOT_DIR = Path(__file__).resolve().parent.parent.parent
+ROOT_DIR = Path(__file__).resolve().parent.parent
 
 def merge_dicts(dict1, dict2):
     for key, value in dict2.items():
@@ -24,8 +24,10 @@ def load_package(name):
     with open(Path(latest, "omproject.toml"), "r") as f:
         project = toml.loads(f.read())
         
-    html = markdown.markdownFromFile(Path(latest, cache["project"]["readme"]))
-    return merge_dicts(cache, project) | html
+    with open(Path(latest, cache["project"]["readme"]), "r") as f:
+        html = markdown.markdown(f.read())
+
+    return merge_dicts(cache, project) | { "html" : html }
 
 def load_packages(path: Path | str = Path(ROOT_DIR, "packages")):
     packages = {extension.name: load_package(extension.name) for extension in path.iterdir()}

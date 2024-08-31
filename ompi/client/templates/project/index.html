@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{% block title %}{{ name }} • ompi{% endblock %}</title>
+    <link rel="stylesheet" type="text/css" href="/static/styles.css">
+</head>
+<body>
+    <nav>
+        {% block navbar %}{% include "navbar.html" %}{% endblock %}
+    </nav>
+    <main>
+        <header>
+            <div class="banner">
+                <h1>{{ name }} {{ version }}</h1>
+                <code>ompi install {{ name }}</code>
+            </div>
+            <div><h3>{{ description }}</h3></div>
+        </header>
+        <section>
+            <div>
+                Navigation
+            </div>
+            <section>
+                {% block readme %}{{ readme | safe }}{% endblock %}
+            </section>
+        </section>
+    </main>
+</body>
+</html>
