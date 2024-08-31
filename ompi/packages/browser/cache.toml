@@ -1,0 +1,8 @@
+[project]
+latest="0.0.9"
+name = "openmacro"
+description = "Official default browser extension for Openmacro. "
+why = "Use this extension to have access to the web."
+authors = ["Amor Budiyanto <amor.budiyanto@gmail.com>"]
+license = "MIT"
+readme = "README.md"
