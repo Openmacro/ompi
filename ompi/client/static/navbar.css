@@ -1,14 +1,15 @@
 #logo {
     max-width: 6rem;
-    padding: 1.8rem;
-    margin-right: auto;
+    margin: auto 0;
 }
 
 navbar {
     height: 5rem;
     display: flex;
+    padding: 0 1.3rem;
     gap: 1rem;
     border-bottom: 1px #d1d9e0 solid;
+    border-top: 6px solid #006dad;
     box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
 }
 
@@ -16,6 +17,44 @@ navbar p {
     margin: auto;
 }
 
+#searchbar {
+    height: 100%;
+    display: flex;
+    margin-right: auto;
+}
+
+#searchbar .search {
+    display: flex;
+    margin: auto;
+    height: 1.6rem;
+    padding: .4rem .8rem;
+    border-radius: 2rem;
+    border: 1px solid #d1d9e0;
+    gap: .2rem;
+}
+
+.search span {
+    margin: auto;
+    color: #59636e;
+    font-weight: 300;
+}
+
+.search input[type=text] {
+    font-family: "Inter", monospace;
+    margin: auto;
+    margin-left: 0;
+    width: 30rem;
+    border: 0;
+    font-size: 1rem;
+    outline: none;
+}
+
 .float-right {
     margin-left: auto;
+    display: flex;
+    gap: 1.6rem;
+}
+
+.float-right a {
+    margin: auto;
 }
