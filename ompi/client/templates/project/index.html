@@ -2,7 +2,10 @@
 <html>
 <head>
     <title>{% block title %}{{ name }} • ompi{% endblock %}</title>
-    <link rel="stylesheet" type="text/css" href="/static/styles.css">
+    <link rel="stylesheet" type="text/css" href="/static/project.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
 </head>
 <body>
     <nav>
@@ -11,19 +14,22 @@
     <main>
         <header>
             <div class="banner">
+                <div>
                 <h1>{{ name }} {{ version }}</h1>
-                <code>ompi install {{ name }}</code>
+                <h3>{{ description }}</h3>
+                <code class="language-bash">ompi install {{ name }}</code>
+                </div>
             </div>
-            <div><h3>{{ description }}</h3></div>
         </header>
-        <section>
+        <section class="content">
             <div>
                 Navigation
             </div>
-            <section>
+            <section class="readme">
                 {% block readme %}{{ readme | safe }}{% endblock %}
             </section>
         </section>
     </main>
 </body>
+<script>hljs.highlightAll();</script>
 </html>
