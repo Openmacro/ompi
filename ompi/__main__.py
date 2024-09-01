@@ -2,7 +2,7 @@ from fastapi import FastAPI, Request
 from fastapi.templating import Jinja2Templates
 from fastapi.staticfiles import StaticFiles
 from fastapi.responses import HTMLResponse
-from .utils.loader import load_packages, ROOT_DIR
+from .utils.loader import load_packages, load_package, ROOT_DIR
 from pathlib import Path
 import uvicorn
 

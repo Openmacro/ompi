@@ -26,7 +26,9 @@
             <div class="project">
                 <section>
                 <h3>Installation</h3>
-                <code>ompi install {{ name }}</code>
+                <code>ompi install {{ name }} <span class="material-symbols-outlined copy">
+                    content_copy
+                    </span></code>
                 </section>
                 <section>
                 <h3>Information</h3>
@@ -34,21 +36,35 @@
                 <ul class="group">
                 <li> Version: {{ version }}</li>
                 <li> License: {{ license }}</li>
-                <li> Source: <a src="{{ src }}">Github</a> </li>
+                <li> Source: <a href="{{ src }}">Github</a> </li>
                 </ul>
                 </section>
                 <section>
-                <h3>Maintainers</h3>
-                <ul class="group">
+                <h3>Contributors</h3>
+                <div class="authors">
                     {% for maintainer in maintainers %}
-                    <li>{{ maintainer }}</li>
+                    <a class="author" href="https://github.com/{{ maintainer }}">
+                    <img src="https://github.com/{{ maintainer }}.png" />
+                    </a>
                     {% endfor %}
-                </ul>
+                </div>
                 </section>
             </div>
-            <md-block class="readme">
+            <div class="readme">
+                <div class="readme-buttons">
+                    <button class="selected"><span class="material-symbols-outlined">
+                        import_contacts
+                        </span><p>README</p></button>
+                        <button><span class="material-symbols-outlined">
+                            history_edu
+                            </span><p>{{ license }} License</p></button>
+                </div>
+                <div class="container">
+            <md-block>
                 {% block readme %}{{ readme | safe }}{% endblock %}
             </md-block>
+        </div>
+        </div>
         </section>
     </main>
 </body>

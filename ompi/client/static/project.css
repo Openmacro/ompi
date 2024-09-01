@@ -31,6 +31,8 @@ header {
     gap: .5rem;
 }
 
+
+
 span.latest {
     font-size: .8rem;
     font-weight: 400;
@@ -69,12 +71,25 @@ ul {
 }
 
 .project code {
-    background-color: #f6f8fa;
+    /*background-color: #f6f8fa;*/
     border-radius: .4rem;
     padding: .6rem;
     height: fit-content;
     margin: 0;
+    border: 1px #d1d9e0 solid;
 }
+
+.copy {
+    padding: 0 .25rem;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-54%);
+    right: 0;
+    font-size: 1.3rem !important;
+    font-weight: 300;
+    color: #606a74;
+}
+
 
 .banner > div {
     display: flex;
@@ -84,9 +99,46 @@ ul {
 }
 
 .readme {
-    padding: 1.8rem;
     border-radius: .5rem;
+    width: 100%;
     border: 1px #d1d9e0 solid;
+}
+
+.readme-buttons {
+    height: 2.8rem;
+    border-bottom: 1px #d1d9e0 solid;
+    display: flex;
+    gap: .4rem;
+    padding: 0 .6rem;
+}
+
+.readme-buttons > button {
+    background-color: transparent;
+    border: none;
+    padding: .35rem 0;
+    gap: .4rem;
+    display: flex;
+}
+
+.selected {
+    color: #006dad !important;
+    border-bottom: 2px solid #006dad !important;
+    padding: 0 .45rem !important;
+    padding-top: .25rem !important;
+}
+
+.readme-buttons span {
+    font-weight: 300;
+    margin: auto;
+}
+
+.readme-buttons > button > p {
+    margin: auto;
+    font-family: "Inter", Arial, Helvetica, sans-serif;
+    font-weight: 500;
+}
+.readme .container {
+    padding: 1.4rem 1.8rem;
 }
 
 .content {
@@ -103,7 +155,7 @@ main {
     display: flex;
     flex-direction: column;
     gap: 1rem;
-    padding: 0 4rem;
+    padding: 0 6rem;
 }
 
 body {
@@ -117,5 +169,26 @@ body {
 code {
     font-family: 'JetBrains Mono', 'Courier New', Courier, monospace;
     font-size: .9rem;
+    display: flex;
+    position: relative;
+}
+
+
+
+.authors {
+    display: grid;
+    grid-template-columns: repeat(6, calc((100% / 6) - .4rem));
+    gap: .45rem;
+}
+
+.author {
+    width: 100%;
+}
+
+.author img {
+    width: 100%;
+    border-radius: 50%;
+    aspect-ratio: 1/1;
+    border: 1px solid #d1d9e0;
 }
 
