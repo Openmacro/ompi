@@ -17,13 +17,20 @@
                 <div>
                 <h1>{{ name }} {{ version }}</h1>
                 <h3>{{ description }}</h3>
-                <code class="language-bash">ompi install {{ name }}</code>
+                
                 </div>
             </div>
         </header>
         <section class="content">
-            <div>
-                Navigation
+            <div class="project">
+                <section>
+                <h3>Installation</h3>
+                <code class="language-bash">ompi install {{ name }}</code>
+                </section>
+                <section>
+                    <h3>Information</h3>
+                    <code class="language-bash">ompi install {{ name }}</code>
+                    </section>
             </div>
             <section class="readme">
                 {% block readme %}{{ readme | safe }}{% endblock %}

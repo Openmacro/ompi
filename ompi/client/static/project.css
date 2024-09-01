@@ -13,22 +13,47 @@ header {
     font-weight: 500;
 }
 
+.banner h1 {
+    margin-top: auto;
+}
+
+.banner {
+    height: 100%;
+        display: flex;
+        width: 100%;
+        border-bottom: 1px #d1d9e0 solid;
+}
+
+.project {
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+}
+
+.project code {
+    background-color: #f6f8fa;
+    border-radius: .4rem;
+    padding: .6rem;
+    height: fit-content;
+}
+
 .banner > div {
     display: flex;
     flex-direction: column;
     gap: .4rem;
+    padding: 1rem 0;
 }
 
 .readme {
-    margin: auto;
     padding: .5rem;
     border-radius: .5rem;
     border: 1px #d1d9e0 solid;
-    width: 70%;
 }
 
 .content {
-    display: flex;
+    display: grid;
+    grid-template-columns: 24% auto;
+    gap: 1rem;
 }
 
 header h1 {
@@ -42,12 +67,6 @@ main {
     padding: 0 4rem;
 }
 
-.banner {
-    display: flex;
-    width: 100%;
-    padding: 1rem;
-}
-
 body {
     margin: 0;
     padding: 0;
@@ -58,7 +77,6 @@ body {
 
 code {
     font-family: 'JetBrains Mono', 'Courier New', Courier, monospace;
-    background-color: #f6f8fa;
-    border-radius: .4rem;
-    padding: .6rem;
+    font-size: .9rem;
 }
+
