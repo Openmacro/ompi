@@ -7,6 +7,7 @@ header {
 
 .banner h1, .banner h3 {
     margin: 0;
+    display: flex;
 }
 
 .banner h3 {
@@ -30,11 +31,49 @@ header {
     gap: .5rem;
 }
 
+span.latest {
+    font-size: .8rem;
+    font-weight: 400;
+    padding: .2rem .35rem;
+    border-radius: .2rem;
+    margin: auto .8rem;
+    color: #1a7f37;
+    border: 1px solid #1a7f37;
+    
+}
+
+.project h3 {
+    font-weight: 600;
+    margin-bottom: .6rem;
+    margin-top: 1rem;
+}
+
+.group {
+    display: flex;
+    flex-direction: column;
+    gap: .3rem;
+}
+
+.project p {
+    margin: 0;
+}
+
+ul {
+    padding-left: 1.6rem;
+    margin: 0;
+}
+
+.project section {
+    display: flex;
+    flex-direction: column;
+}
+
 .project code {
     background-color: #f6f8fa;
     border-radius: .4rem;
     padding: .6rem;
     height: fit-content;
+    margin: 0;
 }
 
 .banner > div {
@@ -45,7 +84,7 @@ header {
 }
 
 .readme {
-    padding: .5rem;
+    padding: 1.8rem;
     border-radius: .5rem;
     border: 1px #d1d9e0 solid;
 }

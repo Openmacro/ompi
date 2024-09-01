@@ -25,9 +25,9 @@ def load_package(name):
         project = toml.loads(f.read())
         
     with open(Path(latest, cache["project"]["readme"]), "r") as f:
-        html = markdown.markdown(f.read())
+        md = f.read()
 
-    return merge_dicts(cache, project) | { "html" : html }
+    return merge_dicts(cache, project) | { "md" : md }
 
 def load_packages(path: Path | str = Path(ROOT_DIR, "packages")):
     packages = {extension.name: load_package(extension.name) for extension in path.iterdir()}

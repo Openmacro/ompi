@@ -4,6 +4,7 @@
     <title>{% block title %}{{ name }} • ompi{% endblock %}</title>
     <link rel="stylesheet" type="text/css" href="/static/project.css">
 
+    <script type="module" src="https://md-block.verou.me/md-block.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
 </head>
@@ -15,7 +16,7 @@
         <header>
             <div class="banner">
                 <div>
-                <h1>{{ name }} {{ version }}</h1>
+                <h1>{{ name }} {{ version }} <span class="latest">latest</span></h1>
                 <h3>{{ description }}</h3>
                 
                 </div>
@@ -25,18 +26,33 @@
             <div class="project">
                 <section>
                 <h3>Installation</h3>
-                <code class="language-bash">ompi install {{ name }}</code>
+                <code>ompi install {{ name }}</code>
                 </section>
                 <section>
-                    <h3>Information</h3>
-                    <code class="language-bash">ompi install {{ name }}</code>
-                    </section>
+                <h3>Information</h3>
+                <p>{{ why }}</p>
+                <ul class="group">
+                <li> Version: {{ version }}</li>
+                <li> License: {{ license }}</li>
+                <li> Source: <a src="{{ src }}">Github</a> </li>
+                </ul>
+                </section>
+                <section>
+                <h3>Maintainers</h3>
+                <ul class="group">
+                    {% for maintainer in maintainers %}
+                    <li>{{ maintainer }}</li>
+                    {% endfor %}
+                </ul>
+                </section>
             </div>
-            <section class="readme">
+            <md-block class="readme">
                 {% block readme %}{{ readme | safe }}{% endblock %}
-            </section>
+            </md-block>
         </section>
     </main>
 </body>
-<script>hljs.highlightAll();</script>
+<script>
+    hljs.highlightAll();
+</script>
 </html>

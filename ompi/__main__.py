@@ -21,7 +21,10 @@ def project(request: Request, name: str):
         "name": name,
         "version": packages[name]["project"]["latest"],
         "description": packages[name]["project"]["description"],
-        "readme": packages[name]["html"]
+        "license": packages[name]["project"]["license"],
+        "src": packages[name]["setup"]["source"],
+        "maintainers": packages[name]["project"]["authors"],
+        "readme": packages[name]["md"]
     }
     return projects.TemplateResponse("index.html", {"request": request, **project_data})
 
